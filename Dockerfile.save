@@ -1,0 +1,14 @@
+FROM php:7.4-cli
+
+# 安装必要扩展
+RUN apt-get update && apt-get install -y \
+    libzip-dev zip libssl-dev zlib1g-dev \
+    && docker-php-ext-install mysqli \
+    && pecl install redis \
+    && docker-php-ext-enable redis
+
+# 复制当前目录到容器中的 /var/task
+COPY . /var/task
+
+# 设置默认工作目录
+WORKDIR /

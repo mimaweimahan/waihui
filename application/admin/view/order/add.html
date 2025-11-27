@@ -1,0 +1,99 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" min="0" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Product_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-product_id" data-rule="required" min="0" data-source="product/index" class="form-control selectpage" name="row[product_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Direction')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-direction" data-rule="required" class="form-control selectpicker" name="row[direction]">
+                {foreach name="directionList" item="vo"}
+                    <option value="{$key}" {in name="key" value="1"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Seconds')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-seconds" data-rule="required" min="0" class="form-control" name="row[seconds]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-amount" data-rule="required" min="0" class="form-control" step="0.00000001" name="row[amount]" type="number" value="0.00000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Open_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-open_price" data-rule="required" min="0" class="form-control" step="0.00000001" name="row[open_price]" type="number" value="0.00000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('End_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-end_price" data-rule="required" min="0" class="form-control" step="0.00000001" name="row[end_price]" type="number" value="0.00000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Profit_ratio')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-profit_ratio" data-rule="required" min="0" class="form-control" step="0.01" name="row[profit_ratio]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Fact_profits')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fact_profits" data-rule="required" class="form-control" step="0.00000001" name="row[fact_profits]" type="number" value="0.00000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="number" value="1">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Pre_profit_result')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pre_profit_result" data-rule="required" class="form-control" name="row[pre_profit_result]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Profit_result')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-profit_result" data-rule="required" class="form-control" name="row[profit_result]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Handletime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-handletime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[handletime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Completetime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-completetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[completetime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
